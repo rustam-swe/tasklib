@@ -1,8 +1,8 @@
 <?php
-require "db.php";
+require __DIR__ . "/../db.php";
 
 try{
-    $db->execute("CREATE TABLE IF NOT EXISTS users(
+    $db->exec("CREATE TABLE IF NOT EXISTS users(
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR (128) NOT NULL,
     email VARCHAR (128) NOT NULL UNIQUE,
@@ -10,7 +10,7 @@ try{
     password VARCHAR (128) NOT NULL
     )");
   
-    $db->execute("CREATE TABLE IF NOT EXISTS tasks(
+    $db->exec("CREATE TABLE IF NOT EXISTS tasks(
     id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR (128) NOT NULL,
     description VARCHAR (128) NOT NULL,
@@ -21,7 +21,7 @@ try{
     updated_at TIMESTAMP
     )");
 
-    $db->execute("CREATE TABLE IF NOT EXISTS users_tasks(
+    $db->exec("CREATE TABLE IF NOT EXISTS users_tasks(
     user_id INT,
     task_id INT,
     status ENUM('available','inProgress','completed') DEFAULT 'available',
@@ -31,7 +31,7 @@ try{
     finished_at TIMESTAMP
     )");
 
-    $db->execute("CREATE TABLE IF NOT EXISTS requirements(
+    $db->exec("CREATE TABLE IF NOT EXISTS requirements(
     id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(128),
     resource VARCHAR(128),
@@ -39,7 +39,7 @@ try{
     FOREIGN KEY (task_id) REFERENCES tasks(id) ON DELETE CASCADE
     )");
 
-    $db->execute("CREATE TABLE required_knowledge(
+    $db->exec("CREATE TABLE required_knowledge(
     id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(128),
     resource VARCHAR(128),
