@@ -1,4 +1,6 @@
 <?php
+require "db.php";
+
 try{
     $db->execute("CREATE TABLE IF NOT EXISTS users(
     id INT AUTO_INCREMENT PRIMARY KEY,
