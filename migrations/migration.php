@@ -47,6 +47,6 @@ try{
     FOREIGN KEY (task_id) REFERENCES tasks(id) ON DELETE CASCADE
     )");
 
-} catch(PDORxception $e){
+} catch(PDOException $e){
     die("Xatolik: " . $e->getMessage());
 }
