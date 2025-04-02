@@ -1,0 +1,15 @@
+{
+    "name": "rustam/tasklib",
+    "autoload": {
+        "psr-4": {
+            "src\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Rustam",
+            "email": "rustamergashev.sp@gmail.com"
+        }
+    ],
+    "require": {}
+}
