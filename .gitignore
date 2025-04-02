@@ -2,3 +2,7 @@
 .vscode/
 /vendor/
 .DS_Store
+<<<<<<< HEAD
+=======
+.env
+>>>>>>> a038b6f6a0b5f575b92e52e0144793ce21f80578
