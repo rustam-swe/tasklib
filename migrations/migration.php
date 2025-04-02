@@ -39,7 +39,7 @@ try{
     FOREIGN KEY (task_id) REFERENCES tasks(id) ON DELETE CASCADE
     )");
 
-    $db->exec("CREATE TABLE required_knowledge(
+    $db->exec("CREATE TABLE IF NOT EXISTS required_knowledge(
     id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(128),
     resource VARCHAR(128),
