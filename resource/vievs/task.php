@@ -31,6 +31,11 @@
       .req_a{
         text-decoration: none;
       }
+      .req_a:hover{
+        background:rgb(245, 241, 30);
+        color:black;
+        border-radius: 12px;
+      }
     </style>
   </head>
   <body class="mt-4 mb-4">
