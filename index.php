@@ -8,7 +8,7 @@ echo 'Task Library';
 <html>
 <body>
 <div id="center_button">
-    <br><button onclick="location.href='/Home_page/adminPage.php'">Admin Page</button>
+    <br><button onclick="location.href='/form/createAdmin.php'">Admin Page</button>
 </div>
 </body>
 </html>

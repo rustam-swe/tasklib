@@ -100,7 +100,7 @@
               </div>
             </div>
 
-            <div class="row g-3">
+            <!-- <div class="row g-3">
                 <div class="col-md-6">
                   <label for="country" class="form-label">Country</label>
                   <input type="text" class="form-control" id="country" name="country" placeholder="Enter the state">
@@ -110,7 +110,7 @@
                   <label for="city" class="form-label">City</label>
                   <input type="text" class="form-control" id="city" name="city" placeholder="Enter the city">
                 </div>
-            </div>
+            </div> -->
 
             <button class="btn-grad" type="submit">Kirish</button>
         </form>
