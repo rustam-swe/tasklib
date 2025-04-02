@@ -1,6 +1,6 @@
 <?php
 
-namespace src\Routes;
+namespace App\Routes;
 
 class Route
 {
@@ -33,8 +33,10 @@ class Route
             header('location: /404');
         }
 
+
         if (is_array($action)) {
-            $controller = new $action[0];
+            $controller = new $action[0]; 
+
             $controller->{$action[1]}();
         }
     }
