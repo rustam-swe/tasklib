@@ -6,12 +6,9 @@ echo 'Task Library';
 ?>
 
 <html>
-<head>
-</head>
-
 <body>
 <div id="center_button">
-    <button onclick="location.href='/Home_page/homePage.php'">Home Page</button>
+    <br><button onclick="location.href='/Home_page/adminPage.php'">Admin Page</button>
 </div>
 </body>
 </html>
