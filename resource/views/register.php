@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form>
+    <form class="form-login" method="POST" action="register.php">
         <h2>Sign up</h2>
         <input type="text" placeholder="Enter your name" required><br><br>
         <input type="text" placeholder="Create password" required><br><br>
