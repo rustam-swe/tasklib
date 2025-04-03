@@ -4,14 +4,12 @@ declare(strict_types=1);
 
 namespace App\Controllers;
 
-
-
 class IndexController {
-  public function index(){
-
+  public function home(){
     echo 'task library';
   }
-public function home(){
-echo 'home';
-}
+
+  public function test(){
+  return 'home page';
+  }
 }
