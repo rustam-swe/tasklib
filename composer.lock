@@ -470,10 +470,19 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
+<<<<<<< Updated upstream
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
     "plugin-api-version": "2.2.0"
+=======
+    "stability-flags": {},
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {},
+    "platform-dev": {},
+    "plugin-api-version": "2.6.0"
+>>>>>>> Stashed changes
 }
