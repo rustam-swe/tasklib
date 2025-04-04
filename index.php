@@ -11,8 +11,4 @@ require "vendor/autoload.php";
 require "web.php";
 
 $src = new \App\src();
-$src->run(); 
-<<<<<<< HEAD
->>>>>>> b51edb7 (Initial commit)
-=======
->>>>>>> 11b45d1 (PATCH: Fixed router)
+$src->run();
