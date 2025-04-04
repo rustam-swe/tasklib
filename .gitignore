@@ -2,7 +2,10 @@
 .vscode/
 /vendor/
 .DS_Store
+<<<<<<< HEAD
 .env
 Dockerfile
 docker-compose.yml
 nginx.conf
+=======
+>>>>>>> b51edb7 (Initial commit)
