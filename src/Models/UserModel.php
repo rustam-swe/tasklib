@@ -17,7 +17,6 @@ class UserModel {
             $stmt->bindParam(':role', $role, \PDO::PARAM_STR);
             $stmt->bindParam(':password', $password, \PDO::PARAM_STR);
             $stmt->execute();
-            return $this->db->lastInsertId();
         } catch (\PDOException $e) {
             error_log("Error adding user: " . $e->getMessage());
             throw new \Exception("Failed to add user: " . $e->getMessage());
@@ -30,7 +29,6 @@ class UserModel {
             $stmt = $this->db->prepare($query);
             $stmt->bindParam(':id', $id, \PDO::PARAM_INT);
             $stmt->execute();
-            return $stmt->rowCount(); 
         } catch (\PDOException $e) {
             error_log("Error deleting user: " . $e->getMessage());
             throw new \Exception("Failed to delete user: " . $e->getMessage());
@@ -62,7 +60,6 @@ class UserModel {
             $stmt->bindParam(':started_at', $startedAt); 
             $stmt->bindParam(':finished_at', $finishedAt); 
             $stmt->execute();
-            return $this->db->lastInsertId();
         } catch (\PDOException $e) {
             error_log("Error adding user task: " . $e->getMessage());
             throw new \Exception("Failed to add user task: " . $e->getMessage());
