@@ -1,11 +1,19 @@
 <?php
-namespace App\src\Models;
+declare(strict_types=1);
 
-class TaskModel {
-    public \PDO $db;
+namespace App\Models;
+
+use \Core\Models\Model;
+use \Core\DB;
+use \PDO;
+use \PDOException;
+use \Exception;
+
+class TaskModel implements Model {
+    public PDO $db;
 
     public function __construct() {
-        $this->db = \DB::connect();
+        $this->db = DB::connect();
     }
     public function addTask($title, $description, $difficulty, $active = false, $status = 'drafted') {
         try {
@@ -24,7 +32,7 @@ class TaskModel {
         }
     }
 
-      public function getTaskById($id) {
+      public function find($id) {
         $query = "SELECT * FROM tasks WHERE id = :id";
         $stmt = $this->db->prepare($query);
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
@@ -32,7 +40,7 @@ class TaskModel {
         return $stmt->fetch();
     }
 
-    public function getAllTasks() {
+    public function all() {
         try {
             $query = "SELECT * FROM tasks";
             $stmt = $this->db->prepare($query);
