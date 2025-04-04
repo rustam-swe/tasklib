@@ -1,9 +1,9 @@
 <?php
 
-namespace src;
+namespace App;
 
-use src\Routes\Request;
-use src\Routes\Route;
+use App\Routes\Request;
+use App\Routes\Route;
 
 class src
 {
@@ -14,8 +14,4 @@ class src
         $router->action();
     }
 
-    public function logout()
-    {
-        //This is necessary for authorization
-    }
 }

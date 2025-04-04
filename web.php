@@ -1,8 +1,7 @@
 <?php
-/* 
-use src\Controllers\IndexController;
-use src\Routes\Route;
+
+use App\Controllers\IndexController;
+use App\Routes\Route;
 
 Route::get("/", [IndexController::class, 'index']);
-*/
-?>
+Route::get("/home", [IndexController::class, 'home']);
