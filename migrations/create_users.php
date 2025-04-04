@@ -1,9 +1,9 @@
 <?php
 require "vendor/autoload.php";
-
 use App\Models\DB;
 
 $db = DB::connect();
+
 try{
 $db->exec("CREATE TABLE IF NOT EXISTS users(
     id INT AUTO_INCREMENT PRIMARY KEY,
