@@ -45,8 +45,8 @@ class UserModel {
 
     # UserTask
 
-    public function addUserTask($userId, $taskId, $status = 'available', $startedAt = null, $finishedAt = null) { # Boshida finishedAt ga qiymat berilmidi
-        try {                                                                                                           # addUserTask metodining status parametriga available berilmaydi
+    public function addUserTask($userId, $taskId, $status = 'available', $startedAt = null) { # Boshida finishedAt ga qiymat berilmidi
+        try {                                                                                       # addUserTask metodining status parametriga available berilmaydi
             $query = "INSERT INTO users_tasks (user_id, task_id, status, started_at, finished_at) 
                       VALUES (:user_id, :task_id, :status, :started_at, :finished_at)";
             $stmt = $this->db->prepare($query);
@@ -54,7 +54,6 @@ class UserModel {
             $stmt->bindParam(':task_id', $taskId, \PDO::PARAM_INT);
             $stmt->bindParam(':status', $status, \PDO::PARAM_STR);
             $stmt->bindParam(':started_at', $startedAt); 
-            $stmt->bindParam(':finished_at', $finishedAt); 
             $stmt->execute();
         } catch (\PDOException $e) {
             error_log("Error adding user task: " . $e->getMessage());

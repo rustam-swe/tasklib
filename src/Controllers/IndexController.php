@@ -5,11 +5,11 @@ declare(strict_types=1);
 namespace App\Controllers;
 
 class IndexController {
-  public function home(){
+  public function index(){
     echo 'task library';
   }
 
-  public function test(){
+  public function home(){
   return 'home page';
   }
 }
