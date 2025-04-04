@@ -6,7 +6,8 @@ $migrations = [
     'create_tasks.php',
     'create_users_tasks.php',
     'create_requirements.php',
-    'create_required_knowledge.php'
+    'create_required_knowledge.php',
+    'alter_table_tasks.php'
 ];
 
 foreach($migrations as $migration){
