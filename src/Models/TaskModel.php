@@ -7,7 +7,7 @@ class TaskModel {
     public function __construct() {
         $this->db = \App\Models\DB::connect();
     }
-    public function addTask($title, $description, $difficulty, $active = false, $status = 'drafted') {
+    public function addTask($title, $description, $difficulty, $active = false, $status = 'drafted') {# addTask funksiyasiga deadline qo’shish kerak
         try {
             $query = "INSERT INTO tasks (title, description, active, status, difficulty) VALUES (:title, :description, :active, :status, :difficulty)";
             $stmt = $this->db->prepare($query);

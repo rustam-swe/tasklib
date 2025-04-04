@@ -45,12 +45,8 @@ class UserModel {
 
     # UserTask
 
-    public function addUserTask($userId, $taskId, $status = 'available', $startedAt = null, $finishedAt = null) {
-        try {
-            
-            $now = new \DateTime();
-            $formatted_date = $now->format('Y-m-d H:i:s'); # Kerakmi?
-
+    public function addUserTask($userId, $taskId, $status = 'available', $startedAt = null, $finishedAt = null) { # Boshida finishedAt ga qiymat berilmidi
+        try {                                                                                                           # addUserTask metodining status parametriga available berilmaydi
             $query = "INSERT INTO users_tasks (user_id, task_id, status, started_at, finished_at) 
                       VALUES (:user_id, :task_id, :status, :started_at, :finished_at)";
             $stmt = $this->db->prepare($query);
@@ -79,6 +75,6 @@ class UserModel {
         }
     }
 
-}
+    # Finish_UserTask degan funksiya yaratish kerak
 
-# qachon task to'xtatiladi?
+}
