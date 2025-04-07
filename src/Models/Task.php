@@ -26,6 +26,7 @@ class Task implements Model {
             $stmt->bindParam(':difficulty', $difficulty, PDO::PARAM_STR);
             $stmt->bindParam(':deadline', $deadline, PDO::PARAM_INT);
             $stmt->execute();
+            return $this->db->lastInsertId();
         } catch (PDOException $e) {
             error_log("Error adding task: " . $e->getMessage());
             throw new Exception("Failed to add task: " . $e->getMessage());
