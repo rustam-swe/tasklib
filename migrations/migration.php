@@ -17,17 +17,18 @@ try{
     active BOOL DEFAULT false,
     status ENUM ('published', 'drafted') DEFAULT 'drafted',
     difficulty INT NOT NULL,
+    givenTime INT NOT NULL,
     created_at TIMESTAMP,
-    updated_at TIMESTAMP # add maximum time spent
+    updated_at TIMESTAMP 
     )");
 
     $db->exec("CREATE TABLE IF NOT EXISTS users_tasks(
     user_id INT,
     task_id INT,
-    status ENUM('available','inProgress','completed') DEFAULT 'available', # available kerakmas
+    status ENUM('inProgress','completed') DEFAULT 'inProgress', 
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
     FOREIGN KEY (task_id) REFERENCES tasks(id) ON DELETE CASCADE,
-    started_at TIMESTAMP,
+    started_at TIMESTAMP NOT NULL,
     finished_at TIMESTAMP
     )");
 
@@ -47,6 +48,6 @@ try{
     FOREIGN KEY (task_id) REFERENCES tasks(id) ON DELETE CASCADE
     )");
 
-} catch(PDORxception $e){
+} catch(PDOException $e){
     die("Xatolik: " . $e->getMessage());
 }

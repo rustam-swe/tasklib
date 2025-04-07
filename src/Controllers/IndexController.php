@@ -6,10 +6,10 @@ namespace App\Controllers;
 
 class IndexController {
   public function index(){
-    echo 'task library';
+    echo 'test mana';
   }
 
   public function home(){
-  return 'home page';
+   echo 'home page';
   }
 }
