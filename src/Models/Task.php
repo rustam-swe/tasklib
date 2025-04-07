@@ -107,7 +107,7 @@ class Task implements Model {
     }
 
     # Requirements
-      
+
     public function addRequirement($taskId, $title, $resource) {
         try {
             $query = "INSERT INTO requirements (task_id, title, resource) VALUES (:task_id, :title, :resource)";

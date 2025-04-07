@@ -14,4 +14,5 @@ require "vendor/autoload.php";
 require "web.php";
 
 $src = new \App\src();
+
 $src->run();
