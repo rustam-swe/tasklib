@@ -5,10 +5,10 @@ namespace Core;
 
 require "vendor/autoload.php";
 
- $dotenv = \Dotenv\Dotenv::createImmutable(__DIR__.'/../');
- $dotenv->load();
+$dotenv = \Dotenv\Dotenv::createImmutable(__DIR__.'/../');
+$dotenv->load();
  
- use \PDO;
+use \PDO;
 use \PDOException;
 
 class DB {
