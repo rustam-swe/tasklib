@@ -3,7 +3,12 @@ declare(strict_types=1);
 
 namespace Core;
 
-use \PDO;
+require "vendor/autoload.php";
+
+ $dotenv = \Dotenv\Dotenv::createImmutable(__DIR__.'/../');
+ $dotenv->load();
+ 
+ use \PDO;
 use \PDOException;
 
 class DB {

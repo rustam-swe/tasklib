@@ -1,7 +1,7 @@
 <?php
 require "vendor/autoload.php";
 
-use App\Models\DB;
+use Core\DB;
 
 $db = DB::connect();
 try {
