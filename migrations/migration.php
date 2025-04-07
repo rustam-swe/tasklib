@@ -16,8 +16,8 @@ try{
     description VARCHAR (128) NOT NULL,
     active BOOL DEFAULT false,
     status ENUM ('published', 'drafted') DEFAULT 'drafted',
-    difficulty INT NOT NULL,
-    givenTime INT NOT NULL,
+    difficulty ENUM ('easy', 'medium', 'hard') NOT NULL,
+    deadline INT,
     created_at TIMESTAMP,
     updated_at TIMESTAMP 
     )");

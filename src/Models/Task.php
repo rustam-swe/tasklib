@@ -15,16 +15,16 @@ class Task implements Model {
     public function __construct() {
         $this->db = DB::connect();
     }
-    public function addTask($title, $description, $difficulty, $givenTime,  $active = false, $status = 'drafted') {
+    public function addTask($title, $description, $difficulty, $deadline,  $active = false, $status = 'drafted') {
         try {
-            $query = "INSERT INTO tasks (title, description, active, status, difficulty, givenTime) VALUES (:title, :description, :active, :status, :difficulty, :givenTime)";
+            $query = "INSERT INTO tasks (title, description, active, status, difficulty, deadline) VALUES (:title, :description, :active, :status, :difficulty, :deadline)";
             $stmt = $this->db->prepare($query);
             $stmt->bindParam(':title', $title, PDO::PARAM_STR);
             $stmt->bindParam(':description', $description, PDO::PARAM_STR);
             $stmt->bindParam(':active', $active, PDO::PARAM_BOOL);
             $stmt->bindParam(':status', $status, PDO::PARAM_STR);
-            $stmt->bindParam(':difficulty', $difficulty, PDO::PARAM_INT);
-            $stmt->bindParam(':givenTime', $givenTime, PDO::PARAM_INT);
+            $stmt->bindParam(':difficulty', $difficulty, PDO::PARAM_STR);
+            $stmt->bindParam(':deadline', $deadline, PDO::PARAM_INT);
             $stmt->execute();
         } catch (PDOException $e) {
             error_log("Error adding task: " . $e->getMessage());
