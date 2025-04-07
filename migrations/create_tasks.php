@@ -1,6 +1,6 @@
 <?php
 require "vendor/autoload.php";
-use App\Models\DB;
+use Core\DB;
 
 $db = DB::connect();
 
@@ -11,7 +11,7 @@ $db->exec("CREATE TABLE IF NOT EXISTS tasks(
     description VARCHAR (128) NOT NULL,
     active BOOL DEFAULT false,
     status ENUM ('published', 'drafted') DEFAULT 'drafted',
-    difficulty INT NOT NULL,
+    difficulty ENUM('easy', 'medium', 'hard') NOT NULL,
     created_at TIMESTAMP,
     updated_at TIMESTAMP
     )");
