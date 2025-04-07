@@ -2,7 +2,8 @@
     "name": "rustam/tasklib",
     "autoload": {
         "psr-4": {
-            "App\\": "src/"
+            "App\\": "src/",
+            "Core\\": "Core/"
         }
     },
     "authors": [
