@@ -3,4 +3,6 @@
 /vendor/
 .DS_Store
 .env
-requirements.txt
+Dockerfile
+docker-compose.yml
+nginx.conf
