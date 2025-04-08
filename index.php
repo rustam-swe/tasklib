@@ -7,10 +7,10 @@ require "vendor/autoload.php";
  $dotenv->load();
 
  $task = new \App\Models\Task();
-
- var_dump($task->all());
-
- exit;
+// echo "<pre>";
+// var_dump($task->all());
+// echo "</pre>";
+// exit;
 
 require "web.php";
 

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form class="form-login" method="POST" action="/home">
+    <form class="form-login" method="POST" action="/login">
         <h2>Login</h2>
         <input type="text" name= "username" placeholder="Enter your name" required><br><br>
         <input type="password" name="password" placeholder="Enter your password" required><br><br>
@@ -16,6 +16,9 @@
     </form>
 </body>
 </html> -->
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -64,7 +67,7 @@
 </head>
 
 <body>
-    <form class="form-login" method="POST" action="/home">
+    <form class="form-login" method="POST" action="/login">
         <h2>Login</h2>
 
         <!-- Username Field -->
