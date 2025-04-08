@@ -6,16 +6,14 @@ require "vendor/autoload.php";
  $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
  $dotenv->load();
 
-//  $task = new \App\Models\Task();
+ $task = new \App\Models\Task();
 
-//  var_dump($task->all());
+ var_dump($task->all());
 
-//  exit;
+ exit;
 
 require "web.php";
 
 $src = new \App\src();
 
 $src->run();
-
-
