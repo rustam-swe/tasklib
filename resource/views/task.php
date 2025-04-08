@@ -3,10 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Task</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <style>
+      body{
+        background-color: #8A2BE2;
+      }
       .delete{
         width: 100%;
         height: 50px;
@@ -17,6 +20,9 @@
       }
       .task{
         margin-top: 60px;
+        background-color: #6495ED;
+        border-radius: 13px;
+        padding: 50px;
       }
       .status{
         margin-top: 60px;
@@ -30,6 +36,12 @@
       }
       .req_a{
         text-decoration: none;
+        color: #000000;
+      }
+      .req_a:hover{
+        background:rgb(245, 241, 30);
+        color:black;
+        border-radius: 12px;
       }
     </style>
   </head>
@@ -43,20 +55,35 @@
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum quam dolores facilis cumque eum molestiae nam numquam quaerat reiciendis quis praesentium corrupti fugiat distinctio possimus non laborum, impedit voluptatum! Quisquam?
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed omnis, dolorem maiores vel totam obcaecati provident expedita consectetur accusamus natus temporibus, aliquam atque in quisquam assumenda rem tempora officiis ipsum?
                 </p>
-                <h2 class="req">Requirements:</h2>
+                <div style="display:flex; justify-content:space-between;">
+                  <div>
+                  <h2 class="req">Requirements:</h2>
                 <ul class="text-secondary fs-5">
-                  <li style="font-size: 1.5em; color: black; text-primary req_a"><a href="">PHP 8.4</a></li>
-                  <li style="font-size: 1.5em; color: black; text-primary req_a"><a href="">Laravel 12</a></li>
-                  <li style="font-size: 1.5em; color: black; text-primary req_a"><a href="">Redis</a></li>
-                  <li style="font-size: 1.5em; color: black; text-primary req_a"><a href="">Postgres</a></li>
-                  <li style="font-size: 1.5em; color: black; text-primary req_a"><a href="">React/Redux</a></li>
-                  <li style="font-size: 1.5em; color: black; text-primary req_a"><a href="">Unit/Feature tests</a></li>
+                  <li style="font-size: 1.5em; color: black; text-primary"><a class="req_a" href="">PHP 8.4</a></li>
+                  <li style="font-size: 1.5em; color: black; text-primary"><a class="req_a" href="">Laravel 12</a></li>
+                  <li style="font-size: 1.5em; color: black; text-primary"><a class="req_a" href="">Redis</a></li>
+                  <li style="font-size: 1.5em; color: black; text-primary"><a class="req_a" href="">Postgres</a></li>
+                  <li style="font-size: 1.5em; color: black; text-primary"><a class="req_a" href="">React/Redux</a></li>
+                  <li style="font-size: 1.5em; color: black; text-primary"><a class="req_a" href="">Unit/Feature tests</a></li>
                 </ul>
+                  </div>
+                  <div>
+                  <h2 class="req">Required knowledge:</h2>
+                <ul class="text-secondary fs-5">
+                  <li style="font-size: 1.5em; color: black; text-primary"><a class="req_a" href="">PHP 8.4</a></li>
+                  <li style="font-size: 1.5em; color: black; text-primary"><a class="req_a" href="">Laravel 12</a></li>
+                  <li style="font-size: 1.5em; color: black; text-primary"><a class="req_a" href="">Redis</a></li>
+                  <li style="font-size: 1.5em; color: black; text-primary"><a class="req_a" href="">Postgres</a></li>
+                  <li style="font-size: 1.5em; color: black; text-primary"><a class="req_a" href="">React/Redux</a></li>
+                  <li style="font-size: 1.5em; color: black; text-primary"><a class="req_a" href="">Unit/Feature tests</a></li>
+                </ul>
+                  </div>
+                </div>
                 <h2 class="req">Resources:</h2>
                 <ul class="text-secondary fs-5">
-                  <li style="font-size: 1.5em; color: black; text-primary req_a"><a href="">YouTube video</a></li>
-                  <li style="font-size: 1.5em; color: black; text-primary req_a"><a href="">Telegram channel</a></li>
-                  <li style="font-size: 1.5em; color: black; text-primary req_a"><a href="">Clean Code</a></li>
+                  <li style="font-size: 1.5em; color: black; text-primary"><a class="req_a" href="">YouTube video</a></li>
+                  <li style="font-size: 1.5em; color: black; text-primary"><a class="req_a" href="">Telegram channel</a></li>
+                  <li style="font-size: 1.5em; color: black; text-primary"><a class="req_a" href="">Clean Code</a></li>
                 </ul>
                 <h2 class="req">Solutions:</h2>
             </div>
