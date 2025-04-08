@@ -42,7 +42,7 @@
     </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <img src="" alt="Logo:" style="width: 80px; height: 60px;">
+  <img src="https://cdn-icons-png.flaticon.com/512/906/906334.png" alt="Logo:" style="width: 80px; height: 60px;">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
