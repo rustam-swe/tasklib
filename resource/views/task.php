@@ -8,7 +8,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <style>
       body{
+<<<<<<< HEAD
         background-color: gray;
+=======
+        background-color: #000000;
+>>>>>>> 2d9edca (PATCH: css is changed in task.php)
       }
       .delete{
         width: 100%;
@@ -20,7 +24,11 @@
       }
       .task{
         margin-top: 60px;
+<<<<<<< HEAD
         background-color: #fff;
+=======
+        background-color: #F0F8FF;
+>>>>>>> 2d9edca (PATCH: css is changed in task.php)
         border-radius: 13px;
         padding: 50px;
       }
