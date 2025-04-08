@@ -11,7 +11,6 @@ $task = new \App\Models\TaskModel();
 var_dump($task->all());
 
 
-exit;
 require "web.php";
 
 $src = new \App\src();
