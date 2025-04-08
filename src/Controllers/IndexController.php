@@ -6,7 +6,7 @@ namespace App\Controllers;
 
 class IndexController {
   public function index(){
-    echo 'test mana';
+      dd([1,2,3]);
   }
 
   public function home(){
