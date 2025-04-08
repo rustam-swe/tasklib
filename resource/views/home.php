@@ -42,42 +42,25 @@
     </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <img src="https://cdn.logojoy.com/wp-content/uploads/2018/05/30164225/572-768x591.png" alt="Logo:" style="width: 80px; height: 60px;">
+  <img src="" alt="Logo:" style="width: 80px; height: 60px;">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only"></span></a>
+        <a class="nav-link" href="/home">Home <span class="sr-only"></span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="View/user_own_posts.php">My Posts</a>
+        <a class="nav-link" href="/register">Regiter</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="View/new_post.php">New Post</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="View/login.php">Login</a>
+        <a class="nav-link" href="/login">Login</a>
       </li>
     </ul>
   </div>
 </nav>     
-<h1>All Tasks</h1>
-
-<form method="get" action="/resource/vievs/home.php">
-    <label for="records_per_page">Records per page:</label>
-    <select id="records_per_page" name="records_per_page">
-        <option value="5" <?php echo $records_per_page==5 ? 'selected' : '' ?>>5</option>
-        <option value="10" <?php echo $records_per_page==10 ? 'selected' : '' ?>>10</option>
-        <option value="20" <?php echo $records_per_page==20 ? 'selected' : '' ?>>20</option>
-        <option value="50" <?php echo $records_per_page==50 ? 'selected' : '' ?>>50</option>
-        <option value="all" <?php echo $records_per_page == $total_records && $_GET['records_per_page'] === 'all' ? 'selected' : ''; ?>>All</option>
-
-    </select>
-    <button type="submit">Set</button>
-</form>
-
+<h1>All Tasks</h1><br>
 <ul>
   <?php
     echo "<table border='1'>
@@ -87,13 +70,6 @@
         <th>Active</th>
         <th>Difficulty</th>
         <th>Deadline</th>
-    </tr>";
-    echo "<tr>
-    <td>dsfsdf</td>
-        <td><a href='home/task?id=1'>view</a></td>
-        <td>sdfsdf</td>
-        <td>sdfsdf</td>
-        <td>sdads</td>
     </tr>";
     foreach ($tasks as $task) {
       echo "<tr>
@@ -108,6 +84,18 @@
     echo "</table>";
   ?>
 </ul>
+<form method="get" action="/resource/views/home.php">
+    <label for="records_per_page">Records per page:</label>
+    <select id="records_per_page" name="records_per_page">
+        <option value="5" <?php echo $records_per_page==5 ? 'selected' : '' ?>>5</option>
+        <option value="10" <?php echo $records_per_page==10 ? 'selected' : '' ?>>10</option>
+        <option value="20" <?php echo $records_per_page==20 ? 'selected' : '' ?>>20</option>
+        <option value="50" <?php echo $records_per_page==50 ? 'selected' : '' ?>>50</option>
+        <option value="all" <?php echo $records_per_page == $total_records && $_GET['records_per_page'] === 'all' ? 'selected' : ''; ?>>All</option>
+
+    </select>
+    <button type="submit">Set</button>
+</form><br>
 
 <div>
     <a href="home.php?page=<?php echo $current_page-1==0 ? $current_page : $current_page-1; ?>&records_per_page=<?php echo $_GET['records_per_page']; ?>">Previous</a>
