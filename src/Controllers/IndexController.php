@@ -11,6 +11,7 @@ class IndexController {
   }
   
   public function home() {
+    $task = (new \App\Models\Task())->find(1);
     require_once __DIR__ . '/../../resource/views/task.php';
   }
   

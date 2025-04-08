@@ -3,11 +3,11 @@ declare(strict_types=1);
 
 namespace App\Models;
 
-use \Core\Models\Model;
-use \Core\DB;
-use \PDO;
-use \PDOException;
-use \Exception;
+use Core\Models\Model;
+use Core\DB;
+use PDO;
+use PDOException;
+use Exception;
 
 class Task implements Model {
     public PDO $db;
