@@ -8,9 +8,9 @@ require "vendor/autoload.php";
 
  $task = new \App\Models\Task();
 
- var_dump($task->all());
+//  var_dump($task->all());
 
- exit;
+//  exit;
 
 require "web.php";
 
