@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Controllers;
 
 class IndexController {
+
   public function index() {
     require_once __DIR__ . '/../../resource/views/login.php';
   }
@@ -17,3 +18,4 @@ class IndexController {
     require_once __DIR__ . '/../../resource/views/register.php';
   }
 }
+

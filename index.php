@@ -2,11 +2,20 @@
 declare(strict_types=1);
 
 require "vendor/autoload.php";
+
+ $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+ $dotenv->load();
+
+ $task = new \App\Models\Task();
+
+ var_dump($task->all());
+
+ exit;
+
 require "web.php";
 
-use App\Routes\Request;
-use App\Routes\Route;
+$src = new \App\src();
 
-$request = new Request();
-$route = new Route($request);
-$route->action();
+$src->run();
+
+
