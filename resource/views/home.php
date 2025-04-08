@@ -98,7 +98,7 @@
 </form><br>
 
 <div>
-    <a href="home.php?page=<?php echo $current_page-1==0 ? $current_page : $current_page-1; ?>&records_per_page=<?php echo $_GET['records_per_page']; ?>">Previous</a>
+    <a href="home?page=<?php echo $current_page-1==0 ? $current_page : $current_page-1; ?>&records_per_page=<?php echo $_GET['records_per_page']; ?>">Previous</a>
     <?php
     for ($page = 1; $page <= $total_pages; $page++) {
         echo '<a href="/home?page=' . $page . '&records_per_page=' . $records_per_page . '">' . $page . '</a> ';
