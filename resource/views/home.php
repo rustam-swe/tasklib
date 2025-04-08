@@ -1,11 +1,4 @@
 <?php
-  // session_start();
-
-  // if (!isset($_SESSION['user_id'])) {
-  //   header('Location: View/login.php');
-  //   exit();
-  // }
-  
   use Core\DB;  
   $pdo=(new DB())->connect();
 
@@ -29,7 +22,7 @@
   $stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
   $stmt->bindParam(':records_per_page', $records_per_page, PDO::PARAM_INT);
   $stmt->execute();
-  $tasks = $stmt->fetchAll();
+  //$tasks = $stmt->fetchAll();
 
 ?>
 <!DOCTYPE html>
@@ -78,7 +71,7 @@
         <td>{$task['active']}</td>
         <td>{$task['difficulty']}</td>
         <td>{$task['deadline']}</td>
-        <td><a href='home/task?id={$task['id']}'>View</a></td>
+        <td><a href='/tasks/{$task['id']}'>View</a></td>
       </tr>";
     }
     echo "</table>";

@@ -10,6 +10,7 @@ class IndexController {
   }
   
   public function home() {
+    $tasks = (new \App\Models\Task())->all();
     require_once __DIR__ . '/../../resource/views/home.php';
   }
 
