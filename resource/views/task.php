@@ -46,7 +46,6 @@
     </style>
   </head>
   <body class="mt-4 mb-4">
-
     <div class="container task">
         <div class="row">
             <div class="col-10">
