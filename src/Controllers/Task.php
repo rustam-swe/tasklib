@@ -19,10 +19,13 @@ class Task{
     }
     
     public function getTask ($id){
-        $task = new \App\Models\Task();
-        $justTask = $task->find($id);
-        $requirements = $task->findRequirements($id);
-        $requiredKnowledges = $task->findRequiredKnowledge(($id));
-        return [$justTask, $requirements, $requiredKnowledges];
-    } 
+      $taskModel = new \App\Models\Task();
+      
+      $task = $taskModel->find($id);
+      
+      $task['requirements']       = $taskModel->findRequirements($id);
+      $task['requiredKnowledges'] = $taskModel->findRequiredKnowledge(($id));
+      
+      return $task;
+    }
 }
