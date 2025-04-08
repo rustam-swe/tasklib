@@ -84,7 +84,7 @@
     echo "</table>";
   ?>
 </ul>
-<form method="get" action="/resource/views/home.php">
+<form method="get" action="/home">
     <label for="records_per_page">Records per page:</label>
     <select id="records_per_page" name="records_per_page">
         <option value="5" <?php echo $records_per_page==5 ? 'selected' : '' ?>>5</option>
@@ -101,10 +101,10 @@
     <a href="home.php?page=<?php echo $current_page-1==0 ? $current_page : $current_page-1; ?>&records_per_page=<?php echo $_GET['records_per_page']; ?>">Previous</a>
     <?php
     for ($page = 1; $page <= $total_pages; $page++) {
-        echo '<a href="/resource/vievs/home.php?page=' . $page . '&records_per_page=' . $records_per_page . '">' . $page . '</a> ';
+        echo '<a href="/home?page=' . $page . '&records_per_page=' . $records_per_page . '">' . $page . '</a> ';
     }
     ?>
-    <a href="/resource/vievs/home.php?page=<?php echo $current_page + 1>$total_pages ? $current_page : $current_page + 1; ?>&records_per_page=<?php echo $_GET['records_per_page']; ?>">Next</a>
+    <a href="/home?page=<?php echo $current_page + 1>$total_pages ? $current_page : $current_page + 1; ?>&records_per_page=<?php echo $_GET['records_per_page']; ?>">Next</a>
 </div>
 
 </body>
