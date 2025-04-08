@@ -1,5 +1,8 @@
 <?php
-use App\Models\DB;
+require_once __DIR__. '/../Core/DB.php';
+
+
+use Core\DB;
 
 $migrations = [
     'create_users.php',
