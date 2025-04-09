@@ -3,33 +3,46 @@ declare(strict_types=1);
 
 namespace Core\Database;
 
+use PDO;
+
 class Migration {
   public const FOLDER = '/migrations';
+  public const SERVICE_FOLDER = '/services/migrations'; 
 
-  public static function migrate(string $root, bool|null $service = false){
-    if(!self::checkForMigrationsTable()) {
-      $this->migrateServiceTables($root); // migrations, users
+  protected static PDO $db; 
+
+  public static function setDb(PDO $pdo): void {
+    self::$db = $pdo;
+  }
+
+  public static function migrate(string $root, bool $service = false): void {
+    if (!self::checkForMigrationsTable()) {
+      self::migrateServiceTables($root); 
     }
 
-    $migratedMigrations = $this->getMigratedMigrations(); // ['create_users_table', 'create_tasks_table'];
+    $migratedMigrations = self::getMigratedMigrations(); 
 
     $path = $root . ($service ? self::SERVICE_FOLDER : self::FOLDER);
+    $migrations = array_diff(scandir($path), ['.', '..']);
 
-    $migrations = array_diff(scandir($path), ['.','..']);
+    $newMigrations = array_diff($migrations, $migratedMigrations);
 
-    $newMigrations = array_diff($migratedMigrations, $migrations)
-
-    foreach($newMigrations as $migration){
+    foreach ($newMigrations as $migration) {
       require "$path/{$migration}";
     }
   }
 
-
-  public static function checkForMigrationsTable(){
-    $db->query('show tables like migrations');
+  public static function checkForMigrationsTable(): bool {
+    $stmt = self::$db->query("SHOW TABLES LIKE 'migrations'");
+    return $stmt && $stmt->rowCount() > 0;
   }
 
-  public function migrateServiceTables($root){
-    $this->migrate($root, true);
+  public static function getMigratedMigrations(): array {
+    $stmt = self::$db->query("SELECT migration FROM migrations");
+    return $stmt ? $stmt->fetchAll(PDO::FETCH_COLUMN) : [];
+  }
+
+  public static function migrateServiceTables(string $root): void {
+    self::migrate($root, true);
   }
 }
