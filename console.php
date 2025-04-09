@@ -4,7 +4,7 @@ declare(strict_types=1);
 require "Core/Database/Migration.php";
 
 $commands = [
-  'migrate'
+  'migration:migrate'
 ];
 
 if(!isset($argv[1])){
@@ -32,4 +32,6 @@ match($command) {
   default => $argumentMissingError($command)
 };
 
-
+/**
+ * TODO:
+ * 1. 
