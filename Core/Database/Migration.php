@@ -6,20 +6,30 @@ namespace Core\Database;
 class Migration {
   public const FOLDER = '/migrations';
 
-  public static function migrate(string $root){
-    // TODO:
-    // 1. Check if migrations table exist
-    //  1.1. If not then create one
-    // 2. Get migrated migrations
-    // 3. Migrate if not migrated
-    //
-    
-    $path = $root . self::FOLDER;
+  public static function migrate(string $root, bool|null $service = false){
+    if(!self::checkForMigrationsTable()) {
+      $this->migrateServiceTables($root); // migrations, users
+    }
+
+    $migratedMigrations = $this->getMigratedMigrations(); // ['create_users_table', 'create_tasks_table'];
+
+    $path = $root . ($service ? self::SERVICE_FOLDER : self::FOLDER);
 
     $migrations = array_diff(scandir($path), ['.','..']);
 
-    foreach($migrations as $migration){
+    $newMigrations = array_diff($migratedMigrations, $migrations)
+
+    foreach($newMigrations as $migration){
       require "$path/{$migration}";
     }
+  }
+
+
+  public static function checkForMigrationsTable(){
+    $db->query('show tables like migrations');
+  }
+
+  public function migrateServiceTables($root){
+    $this->migrate($root, true);
   }
 }
