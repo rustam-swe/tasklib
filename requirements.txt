@@ -1,0 +1,27 @@
+I. Functional requirements :
+
+1) There should be several pages :
+    a. Home page - consists of list of tasks
+    b. Detailed page - contains all info about the task:
+        i. Title
+        ii. Desc
+        iii. requirements
+        iv. Difficulty
+        v. Deadlines
+        vi. Resources
+    c. Login / Reister pages
+
+2) THere should be simple admin dashboard :
+    a. CRUD based pages for tasks
+
+II. Non-functional requirements :
+    1. Language of choice : PHP 8.3
+    2. Frameworks : No
+    3. Architecture : 
+        a. Monolith
+        b. Client-Server (Three Tier / Layer Architecture)
+        c. Server : MVC
+    5. Docker : optional 
+    6. Webserver : nginx
+
+III. ERD : https://dbdiagram.io/d/67aa0aa0263d6cf9a0a3aaed
