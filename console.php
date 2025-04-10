@@ -32,4 +32,3 @@ match($command) {
   default => $argumentMissingError($command)
 };
 
-

@@ -63,15 +63,15 @@ class User implements Model{
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function findByEmailAndPassword($email, $password) {
-        $query = "SELECT id FROM users WHERE email = :email AND password = :password"; 
+    public function findByEmail($email) {
+        $query = "SELECT id, email, password FROM users WHERE email = :email"; 
         $stmt = $this->db->prepare($query);
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
-        $stmt->bindParam(':password', $password, PDO::PARAM_STR); 
         $stmt->execute();
 
         $user = $stmt->fetch();
     
-        return $user ? true : false;
+        return $user;
     }
+
 }
