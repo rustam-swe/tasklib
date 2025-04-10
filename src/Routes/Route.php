@@ -30,7 +30,7 @@ class Route
         $action = self::$routes[$method][$path] ?? false;
 
         if ($action == false) {
-            header('location: /404');
+            // header('location: /404');
         }
 
 

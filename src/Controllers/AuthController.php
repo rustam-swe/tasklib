@@ -3,34 +3,61 @@
 declare(strict_types = 1);
 
 namespace App\Controllers;
-
+use App\Models\User;
 class AuthController{
 
-    public function SendLogin(){
-        require_once __DIR__ . '/../../resource/views/login.php';
+    
+    public function CheckLogin() {
+        session_start();
+    
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $email = $_POST["email"];
+            $password = $_POST["password"];
+
+            
+            
+            $userModel = new User();
+            $user = $userModel->findByEmail($email);
+            
+
+            if ($user && isset($user['password']) && $user['password'] === $password) {
+                $_SESSION["email"] = $user['email']; 
+                $_SESSION["user_id"] = $user['id'];
+    
+                header("Location: /home");
+                exit();
+            } else {
+                echo "Xato: Login yoki parol noto‘g‘ri";
+            }
+        }
     }
 
-    public function SendRegister(){
-        pass;
+
+    public function CreateRegister() {
+        session_start(); // Sessiyani boshlash
+    
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $email = $_POST["email"];
+            $password = $_POST["password"];
+            $username = $_POST["username"];
+
+            
+            
+            try {
+                $userModel = new User();
+                $user = $userModel->addUser($username, $email, $password);
+                echo "Successfully created";
+            } catch (Exception $e) {
+                throw new Exception("Foydalanuvchini qoshishda xatolik yuz berdi: " . $e->getMessage());
+            }
+        }
     }
 
-    public function CheckLogin(){
-        $valid_user = "admin";  // Foydalanuvchi nomi
-$valid_pass = "12345";  // Parol
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST["username"];
-    $password = $_POST["password"];
 
-    if ($username === $valid_user && $password === $valid_pass) {
-        $_SESSION["user"] = $username; // Sessionga saqlash
-        header("Location: task");  // Home sahifasiga yo‘naltirish
-        exit();
-    } else {
-        echo "Xato: Login yoki parol notogri";
-    }
-}
-    }
+
+    
+    
 
 }
 

@@ -67,13 +67,13 @@
 </head>
 
 <body>
-    <form class="form-login" method="POST" action="/login">
+    <form class="form-login" method="POST" action="/check">
         <h2>Login</h2>
 
         <!-- Username Field -->
         <div class="form-group">
-            <label for="username" class="form-label">Username</label>
-            <input type="text" class="form-control" name="username" id="username" placeholder="Enter your name" required>
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email address" required>
         </div>
 
         <!-- Password Field -->
