@@ -77,7 +77,7 @@
             </div>
             <div class="col">
               <a href="" class="btn btn-danger delete"><h4 align="center">Delete</h4></a>
-              <a href="" class="btn btn-warning edit mt-3"><h4 align="center">Edit</h4></a>
+              <a href="" cla ss="btn btn-warning edit mt-3"><h4 align="center">Edit</h4></a>
               <h4 class="mt-5 fst-italic">difficulty level:</h4>
               <h3 align="center" class="mt-1 border border-3 border-dark text-danger"><?=$task['difficulty']?></h3>
               <h3 align="center" class="mt-1 border border-3 border-dark text-warning">start button</h3>

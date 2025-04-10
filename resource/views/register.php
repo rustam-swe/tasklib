@@ -61,13 +61,19 @@
 </head>
 
 <body>
-    <form class="form-login" method="POST" action="/home">
+    <form class="form-login" method="POST" action="/create">
         <h2>Sign up</h2>
 
         <!-- Username Field -->
         <div class="form-group">
             <label for="username" class="form-label">Username</label>
-            <input name="username" type="text" class="form-control" id="username" placeholder="Enter your name" required>
+            <input name="username" type="text" class="form-control" id="username" placeholder="Enter your name" required  minlength="3">
+        </div>
+
+        <!-- Email Field -->
+        <div class="form-group">
+            <label for="email" class="form-label">Email</label>
+            <input name="email" type="email" class="form-control" id="email" placeholder="Enter your email" required>
         </div>
 
         <!-- Password Field -->
@@ -76,11 +82,7 @@
             <input name="password" type="password" class="form-control" id="password" placeholder="Create password" required>
         </div>
 
-        <!-- Confirm Password Field -->
-        <div class="form-group">
-            <label for="confirm-password" class="form-label">Confirm Password</label>
-            <input name="confirm-password" type="password" class="form-control" id="confirm-password" placeholder="Confirm password" required>
-        </div>
+        
 
         <!-- Submit Button -->
         <button type="submit" class="btn btn-primary">Sign up</button>
