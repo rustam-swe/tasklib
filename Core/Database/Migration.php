@@ -8,16 +8,16 @@ class Migration {
 
   public static function migrate(string $root, bool|null $service = false){
     if(!self::checkForMigrationsTable()) {
-      $this->migrateServiceTables($root); // migrations, users
+      self::migrateServiceTables($root); // migrations, users
     }
 
-    $migratedMigrations = $this->getMigratedMigrations(); // ['create_users_table', 'create_tasks_table'];
+    $migratedMigrations = self::getMigratedMigrations(); // ['create_users_table', 'create_tasks_table'];
 
     $path = $root . ($service ? self::SERVICE_FOLDER : self::FOLDER);
 
     $migrations = array_diff(scandir($path), ['.','..']);
 
-    $newMigrations = array_diff($migratedMigrations, $migrations)
+    $newMigrations = array_diff($migratedMigrations, $migrations);
 
     foreach($newMigrations as $migration){
       require "$path/{$migration}";
@@ -26,7 +26,13 @@ class Migration {
 
 
   public static function checkForMigrationsTable(){
+    $db = self::getDatabaseConnection();
     $db->query('show tables like migrations');
+  }
+
+  private static function getDatabaseConnection() {
+    // Replace the following line with your actual database connection logic
+    return new \PDO('mysql:host=localhost;dbname=test', 'username', 'password');
   }
 
   public function migrateServiceTables($root){
