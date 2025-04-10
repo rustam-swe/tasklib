@@ -13,6 +13,7 @@ class IndexController {
   
 
   public function indexTask() {
+    $task = (new \App\Controllers\Task())->getTask(1);
     require_once __DIR__ . '/../../resource/views/task.php';
   }
   

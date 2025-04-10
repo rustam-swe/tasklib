@@ -18,7 +18,8 @@ class Task{
         }
     }
     
-    public function getTask ($id){
+    public function show ($id){
+      dd($id);
       $taskModel = new \App\Models\Task();
       
       $task = $taskModel->find($id);
