@@ -12,5 +12,5 @@ try {
 
     echo "Jadval muvaffaqiyatli yangilandi.\n";
 } catch (PDOException $e) {
-    die("Xatolik: " . $e->getMessage());
+    die("Xatolik: " . $e->getMessage() . PHP_EOL . "File: " . __FILE__ . PHP_EOL );
 }
