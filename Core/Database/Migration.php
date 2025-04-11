@@ -35,7 +35,7 @@ class Migration {
     return new \PDO('mysql:host=localhost;dbname=test', 'username', 'password');
   }
 
-  public function migrateServiceTables($root){
-    $this->migrate($root, true);
+  public static function migrateServiceTables($root){
+    self::migrate($root, true);
   }
 }
