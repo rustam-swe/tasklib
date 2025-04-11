@@ -22,22 +22,50 @@ class Route
         self::$routes['post'][$path] = $action;
     }
 
+    public static function delete($path, $action)
+    {
+      if($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['_method'] === 'delete'){
+      
+        self::$routes['delete'][$path] = $action;
+      }
+    }
+
     public function action()
     {
         $path = $this->request->url();
         $method = $this->request->method();
+<<<<<<< Updated upstream
 
         $action = self::$routes[$method][$path] ?? false;
+=======
+        $routes = self::$routes[$method] ?? [];
+>>>>>>> Stashed changes
 
-        if ($action == false) {
-            header('location: /404');
+        foreach ($routes as $route => $action) {
+            $pattern = preg_replace('/\{(\w+)\}/', '(\w+)', $route);
+            $pattern = "#^" . $pattern . "$#";
+
+            if (preg_match($pattern, $path, $matches)) {
+              array_shift($matches); // remove full match
+
+                if (is_array($action)) {
+                  $controller = new $action[0];
+                    $controller->{$action[1]}(...$matches);
+
+                    return;
+                }
+            }
         }
 
+<<<<<<< Updated upstream
 
         if (is_array($action)) {
             $controller = new $action[0]; 
 
             $controller->{$action[1]}();
         }
+=======
+        header('location: /404');
+>>>>>>> Stashed changes
     }
 }

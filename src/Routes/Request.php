@@ -15,6 +15,10 @@ class Request
 
     public function method()
     {
+      if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['_method'])){
+        return strtolower($_POST['_method']);
+      }
+
         $method = strtolower($_SERVER['REQUEST_METHOD']);
 
         return $method;
