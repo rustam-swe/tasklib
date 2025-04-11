@@ -18,14 +18,24 @@ class Task{
         }
     }
     
-    public function getTask ($id){
+    public function show ($id){
       $taskModel = new \App\Models\Task();
       
       $task = $taskModel->find($id);
+
+      if(!$task){
+        header('Location: /404');
+      }
       
       $task['requirements']       = $taskModel->findRequirements($id);
       $task['requiredKnowledges'] = $taskModel->findRequiredKnowledge(($id));
-      
-      return $task;
+
+      require __DIR__ .'/../../resource/views/task.php';
+    }
+
+    public function delete(int $id) {
+      (new \App\Models\Task())->delete($id);
+
+      header('Location: /');
     }
 }

@@ -46,7 +46,8 @@ class Task implements Model {
     }
 
     public function delete($id) {
-        try {
+
+      try {
             $query = "DELETE FROM tasks WHERE id = :id";
             $stmt = $this->db->prepare($query);
             $stmt->bindParam(':id', $id, PDO::PARAM_INT);
