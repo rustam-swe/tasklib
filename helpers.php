@@ -10,4 +10,11 @@ if (!function_exists('dd')){
     }
 }
 
-?>
+if (!function_exists('dump')){
+    function dump(...$data){
+        echo "<body style='background-color: black'>";
+        echo "<pre style='background-color-black; color:#0dbb2a; font-family: monospace'>";
+        print_r($data);
+        echo "</pre>";
+    }
+}

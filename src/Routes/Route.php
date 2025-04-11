@@ -22,22 +22,39 @@ class Route
         self::$routes['post'][$path] = $action;
     }
 
+    public static function delete($path, $action)
+    {
+      if($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['_method'] === 'delete'){
+      
+        self::$routes['delete'][$path] = $action;
+      }
+    }
+
     public function action()
     {
         $path = $this->request->url();
         $method = $this->request->method();
-
-        $action = self::$routes[$method][$path] ?? false;
-
+        $routes = self::$routes[$method] ?? [];
         if ($action == false) {
-            // header('location: /404');
+          header('location: /404');
         }
 
+        foreach ($routes as $route => $action) {
+            $pattern = preg_replace('/\{(\w+)\}/', '(\w+)', $route);
+            $pattern = "#^" . $pattern . "$#";
 
-        if (is_array($action)) {
-            $controller = new $action[0]; 
+            if (preg_match($pattern, $path, $matches)) {
+              array_shift($matches); // remove full match
 
-            $controller->{$action[1]}();
+                if (is_array($action)) {
+                  $controller = new $action[0];
+                    $controller->{$action[1]}(...$matches);
+
+                    return;
+                }
+            }
         }
+
+        header('location: /404');
     }
 }
