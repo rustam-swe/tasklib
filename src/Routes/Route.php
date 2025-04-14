@@ -35,9 +35,9 @@ class Route
         $path = $this->request->url();
         $method = $this->request->method();
         $routes = self::$routes[$method] ?? [];
-        if ($action == false) {
-          header('location: /404');
-        }
+        // if ($action == false) {
+        //   header('location: /404');
+        // }
 
         foreach ($routes as $route => $action) {
             $pattern = preg_replace('/\{(\w+)\}/', '(\w+)', $route);
