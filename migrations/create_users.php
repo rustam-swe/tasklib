@@ -1,6 +1,8 @@
 <?php
-require "vendor/autoload.php";
-use App\Models\DB;
+
+require __DIR__ . '/../vendor/autoload.php';
+
+use Core\DB;
 
 $db = DB::connect();
 

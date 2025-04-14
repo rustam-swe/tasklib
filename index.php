@@ -2,7 +2,7 @@
 declare(strict_types=1);
 
 require "vendor/autoload.php";
-require "web.php";
+require "bootstrap.php";
+require "helpers.php";
+require "routes.php";
 
-$src = new \App\src();
-$src->run();
